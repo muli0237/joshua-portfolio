@@ -72,7 +72,6 @@ jobs:
       run: npm audit --audit-level=moderate || echo "Audit completed with warnings"
 
     - name: Run Snyk scan
-      if: ${{ secrets.SNYK_TOKEN != '' }}
       uses: snyk/actions/node@master
       continue-on-error: true
       env:

@@ -1,4 +1,4 @@
-.PHONY: help docker-build docker-run docker-stop docker-logs docker-compose-up docker-compose-down k8s-deploy k8s-status k8s-logs k8s-delete setup lint build dev
+.PHONY: help docker-build docker-run docker-stop docker-logs docker-compose-up docker-compose-down setup lint build dev test
 
 # Colors
 BLUE := \033[0;34m
@@ -17,17 +17,12 @@ help:
 	@echo "  make docker-compose-up     Start Docker Compose services"
 	@echo "  make docker-compose-down   Stop Docker Compose services"
 	@echo ""
-	@echo "$(YELLOW)Kubernetes Commands:$(NC)"
-	@echo "  make k8s-deploy            Deploy to Kubernetes"
-	@echo "  make k8s-status            Check Kubernetes status"
-	@echo "  make k8s-logs              View Kubernetes logs"
-	@echo "  make k8s-delete            Delete Kubernetes resources"
-	@echo ""
 	@echo "$(YELLOW)Development Commands:$(NC)"
-	@echo "  make setup                 Setup DevOps environment"
+	@echo "  make install               Install dependencies"
 	@echo "  make lint                  Run linter"
 	@echo "  make build                 Build application"
 	@echo "  make dev                   Start development server"
+	@echo "  make test                  Run tests"
 	@echo ""
 
 # Docker Commands
@@ -61,29 +56,11 @@ docker-compose-down:
 	docker-compose down
 	@echo "$(GREEN)✓ Services stopped$(NC)"
 
-# Kubernetes Commands
-k8s-deploy:
-	@echo "$(BLUE)Deploying to Kubernetes...$(NC)"
-	./scripts/k8s-deploy.sh joshua-portfolio apply
-	@echo "$(GREEN)✓ Deployment complete$(NC)"
-
-k8s-status:
-	@echo "$(BLUE)Kubernetes status:$(NC)"
-	./scripts/k8s-deploy.sh joshua-portfolio status
-
-k8s-logs:
-	@echo "$(BLUE)Kubernetes logs:$(NC)"
-	kubectl logs -n joshua-portfolio -l app=joshua-portfolio -f
-
-k8s-delete:
-	@echo "$(BLUE)Deleting Kubernetes resources...$(NC)"
-	./scripts/k8s-deploy.sh joshua-portfolio delete
-	@echo "$(GREEN)✓ Resources deleted$(NC)"
-
 # Development Commands
-setup:
-	@echo "$(BLUE)Setting up DevOps environment...$(NC)"
-	./scripts/setup-devops.sh
+install:
+	@echo "$(BLUE)Installing dependencies...$(NC)"
+	npm install
+	@echo "$(GREEN)✓ Dependencies installed$(NC)"
 
 lint:
 	@echo "$(BLUE)Running linter...$(NC)"
@@ -98,6 +75,12 @@ dev:
 	@echo "$(BLUE)Starting development server...$(NC)"
 	npm run dev
 
+test:
+	@echo "$(BLUE)Running tests...$(NC)"
+	npm run lint
+	npm run build
+	@echo "$(GREEN)✓ Tests complete$(NC)"
+
 # Utility Commands
 .PHONY: clean
 clean:
@@ -106,12 +89,6 @@ clean:
 	rm -rf node_modules
 	rm -rf dist
 	@echo "$(GREEN)✓ Cleanup complete$(NC)"
-
-.PHONY: install
-install:
-	@echo "$(BLUE)Installing dependencies...$(NC)"
-	npm install
-	@echo "$(GREEN)✓ Dependencies installed$(NC)"
 
 .PHONY: all
 all: install build docker-build
