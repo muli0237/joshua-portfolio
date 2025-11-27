@@ -1,0 +1,13 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: joshua-portfolio-pdb
+  namespace: joshua-portfolio
+  labels:
+    app: joshua-portfolio
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      app: joshua-portfolio
+
