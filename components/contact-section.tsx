@@ -178,7 +178,7 @@ export function ContactSection() {
             <p className="text-center text-muted-foreground mb-6">Or connect with me on</p>
             <div className="flex justify-center gap-6">
               <a
-                href="https://github.com"
+                href="https://github.com/muli0237"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative p-4 rounded-full bg-card border border-border hover:border-primary transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20"
@@ -187,7 +187,7 @@ export function ContactSection() {
                 <Github className="h-6 w-6 group-hover:text-primary transition-colors" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/joshuamuli"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative p-4 rounded-full bg-card border border-border hover:border-primary transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20"
@@ -196,7 +196,7 @@ export function ContactSection() {
                 <Linkedin className="h-6 w-6 group-hover:text-primary transition-colors" />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://twitter.com/joshuamuli"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative p-4 rounded-full bg-card border border-border hover:border-primary transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20"

@@ -22,8 +22,8 @@ const projects = [
     description:
       "Full-featured e-commerce platform with real-time inventory management, payment processing, and order tracking.",
     tech: ["Next.js", "Stripe", "Nodejs", "Docker"],
-    github: "https://github.com",
-    demo: "https://demo.com",
+    github: "https://github.com/muli0237",
+    demo: "#",
     image: "/modern-ecommerce-dashboard.png",
   },
   {
@@ -32,8 +32,8 @@ const projects = [
     description:
       "Flexible content management system with GraphQL API, role-based access control, and media management.",
     tech: ["NestJS", "GraphQL", "PostgreSQL", "S3"],
-    github: "https://github.com",
-    demo: "https://demo.com",
+    github: "https://github.com/muli0237",
+    demo: "#",
     image: "/cms-content-management-interface.jpg",
   },
   {
@@ -42,8 +42,8 @@ const projects = [
     description:
       "Comprehensive school management platform with student tracking, grade management, and parent portals.",
     tech: ["React", "Nodejs", "RBAC"],
-    github: "https://github.com",
-    demo: "https://demo.com",
+    github: "https://github.com/muli0237",
+    demo: "#",
     image: "/school-management-dashboard.png",
   },
   {
@@ -51,8 +51,8 @@ const projects = [
     title: "Data Analysis Platform",
     description: "Advanced data visualization and analysis platform with real-time processing and interactive charts.",
     tech: ["Django", "Pandas", "D3.js", "Celery"],
-    github: "https://github.com",
-    demo: "https://demo.com",
+    github: "https://github.com/muli0237",
+    demo: "#",
     image: "/data-analytics-dashboard.png",
   },
   {
@@ -60,8 +60,8 @@ const projects = [
     title: "Pen-Testing Dashboard",
     description: "Security testing dashboard with real-time network scanning, vulnerability detection, and reporting.",
     tech: ["React", "Nodejs", "WebSocket", "Nmap"],
-    github: "https://github.com",
-    demo: "https://demo.com",
+    github: "https://github.com/muli0237",
+    demo: "#",
     image: "/cybersecurity-penetration-testing-dashboard.jpg",
   },
 ]
